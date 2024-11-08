@@ -21,11 +21,14 @@ var server =http.createServer((req,res,err) => {
     if(err){
         console.log("The error occured is"+ err);
     }
+    res.statusCode = 200;
+    res.setHeader('Content-Type','text/plain')
     res.end("welcome to node js")
     console.log("server created");
 });
 
 
 server.listen(port,()=>{
-    console.log("running")
+    console.log(`Server running at ${port}`)
+
 });
